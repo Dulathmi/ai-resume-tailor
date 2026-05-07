@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function DashboardLayout({
   children,
 }: {
@@ -11,9 +13,26 @@ export default function DashboardLayout({
           Tailor AI
         </h2>
         <nav className="space-y-4 flex-1">
-          <div className="text-sm font-medium text-white cursor-pointer bg-white/5 p-2 rounded-lg">Dashboard</div>
-          <div className="text-sm font-medium text-zinc-400 hover:text-white cursor-pointer transition-colors p-2">My Resumes</div>
-          <div className="text-sm font-medium text-zinc-400 hover:text-white cursor-pointer transition-colors p-2">Job Matches</div>
+          {/* Dashboard Link */}
+          <Link href="/dashboard">
+            <div className="text-sm font-medium text-white cursor-pointer bg-white/5 p-2 rounded-lg hover:bg-white/10 transition-all">
+              Dashboard
+            </div>
+          </Link>
+          
+          {/* My Resumes Link (Points to Dashboard as well) */}
+          <Link href="/dashboard">
+            <div className="text-sm font-medium text-zinc-400 hover:text-white cursor-pointer transition-colors p-2">
+              My Resumes
+            </div>
+          </Link>
+
+          {/* Job Matches Link (Points to your new Tailor page) */}
+          <Link href="/tailor">
+            <div className="text-sm font-medium text-zinc-400 hover:text-white cursor-pointer transition-colors p-2">
+              Job Matches
+            </div>
+          </Link>
         </nav>
       </aside>
 
